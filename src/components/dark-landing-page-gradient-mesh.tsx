@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from "../components/ui/button"
-import { Input } from "../components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-export default function Home() {
+export function DarkLandingPageGradientMesh() {
   const [email, setEmail] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
