@@ -54,7 +54,7 @@ export default function Home() {
 
       <footer className="bg-black/50 text-white py-4 text-center relative z-10">
         <div className="container mx-auto px-4">
-          <p>&copy; 2024 Grow With AI. All rights reserved.</p>
+          <p>&copy; 2024 Grow With AI. All rights reserved</p>
         </div>
       </footer>
 
