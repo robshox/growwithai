@@ -60,7 +60,7 @@ export default function Home() {
 
       <footer className="bg-black/50 text-white py-4 text-center relative z-10">
         <div className="container mx-auto px-4">
-          <p>&copy; 2024 Grow With AI. All rights reserved</p>
+          <p>Grow With AI in association with <a href="https://switchdimension.com" className="underline hover:text-lime-400">Switch Dimension</a></p>
         </div>
       </footer>
 
