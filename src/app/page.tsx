@@ -1,21 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 import { toast, ToastContainer } from 'react-toastify'
+import { useForm, ValidationError } from '@formspree/react'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function Home() {
-  const [email, setEmail] = useState('')
+  const [state, handleSubmit] = useForm("xzzbeynv") // Replace with your form ID
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the email to your backend
-    console.log('Email submitted:', email)
-    toast.success('Thank you! Your report has been sent to your email.')
-    setEmail('')
-  }
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success('Thank you! Your report will be sent to you shortly')
+    }
+  }, [state.succeeded])
 
   return (
     <div className="dark min-h-screen flex flex-col bg-background text-foreground relative overflow-hidden">
@@ -35,15 +34,22 @@ export default function Home() {
         <form onSubmit={handleSubmit} className="w-full max-w-md">
           <div className="flex flex-col sm:flex-row gap-4">
             <Input
+              id="email"
+              name="email"
               type="email"
               placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
               className="flex-grow bg-white/10 text-white placeholder-white/50 border-white/20"
             />
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+              className="text-red-500 text-sm"
+            />
             <Button 
               type="submit" 
+              disabled={state.submitting}
               className="w-full sm:w-auto bg-gradient-to-l from-lime-400 to-white text-black font-semibold hover:from-lime-500 hover:to-gray-100 transition-colors"
             >
               Get Free Report
