@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     if (state.succeeded) {
-      toast.success('Thank you! Your report will be sent to you shortly')
+      toast.success('Thank you! Rob is updating the report and will have it with you shortly')
     }
   }, [state.succeeded])
 
@@ -27,8 +27,8 @@ export default function Home() {
           Grow With AI
         </h2>
         <p className="text-xl mb-8 max-w-2xl text-white">
-          Discover 100 game-changing generative AI use cases that can transform your business. 
-          Get our exclusive report now!
+          Discover practical generative AI use cases that can transform your business. 
+          Join the newsletter and get the updated report coming this week!
         </p>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md">
